@@ -1,0 +1,25 @@
+# Default config for AuthTools, an extension of SimpleAuth
+
+# registration settings
+register:
+  # at most how many accounts can a player create from the same IP
+  maxNamesForIp: 5
+  # minimum and maximum number of characters that the password should have.
+  minPwLength: 4
+  maxPwLength: 256
+  # the regex that limits the pattern of passwords. Ignore this if you don't understand. /.*/ allows any arbitrary characters.
+  regex for password: /.*/
+
+# login settings
+login:
+  # the maximum number of login attempts allowed before kicking the player
+  maxLogins: 5
+  # default option for IP-authentication ("last" for matching last IP, "none" for no IP-authentication, "all" for any historical IP)
+  defaultIpConfig: last
+
+# default language file (one of the base file names from those in plugins/AuthTools/locale)
+defaultLang: eng
+
+# AuthTools extends the data providers used by SimpleAuth. Generic properties are inherited from SimpleAuth, but AuthTools-specific properties are configured here.
+dataProvider:
+

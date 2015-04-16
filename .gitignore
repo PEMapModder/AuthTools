@@ -1,0 +1,5 @@
+# PhpStorm configuration files
+.idea/*
+# Temporary files
+*.bak
+*.lnk
