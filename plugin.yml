@@ -7,6 +7,7 @@ depend:
 author: PEMapModder
 main: authtools\AuthTools
 description: A plugin that works around with SimpleAuth to add different featuers
+website: https://github.com/PEMapModder/AuthTools
 permission:
   authtools:
     description: AuthTools main permission node
