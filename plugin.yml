@@ -1,6 +1,6 @@
 ---
 name: AuthTools
-version: 1.0.0_indev_#006
+version: 1.0.0_indev_#013
 api: 1.8.0
 depend:
 - SimpleAuth

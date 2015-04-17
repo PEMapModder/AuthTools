@@ -1,8 +1,5 @@
 <?php
-$statusPadding = 0;
-preg_match_all("/Columns:[ \t]+([0-9]+)/", `mode`, $matches);
-$MAX_LENGTH = ((int) $matches[1][0]) - 1;
-
+exec("TITLE PEMapModder's Phar Compiler (PPC)");
 $MAX_LENGTH = 180;
 
 $dir = rtrim(realpath("."), "/\\") . "/";
@@ -85,6 +82,11 @@ if($hasRes){
 		$phar->addFile($absPath, $relPath);
 	}
 }
+
+$time = time();
+$phar->addFromString("resources/__PPC_TIMESTAMP__", "$time");
+console("Injected timestamp $time(" . (new DateTime)->setTimestamp($time)->format(DATE_ATOM) . ")...");
+
 
 console("Compressing files...");
 $phar->compressFiles(Phar::GZ);

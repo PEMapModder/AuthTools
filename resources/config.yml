@@ -1,14 +1,20 @@
 # Default config for AuthTools, an extension of SimpleAuth
 
+# DirectAuth is the AuthTools functionality that lets players authenticate their account directly.
+directAuth:
+  enabled: true
+
 # registration settings
 register:
-  # at most how many accounts can a player create from the same IP
-  maxNamesForIp: 5
+  # at most how many accounts can players create from the same IP
+  maxNamesPerIp: 5
+  # at most how many accounts can players create from the same subnet
+  maxNamesPerSubnet: 327680
   # minimum and maximum number of characters that the password should have.
-  minPwLength: 4
-  maxPwLength: 256
+  minPasswordLength: 4
+  maxPasswordLength: 256
   # the regex that limits the pattern of passwords. Ignore this if you don't understand. /.*/ allows any arbitrary characters.
-  regex for password: /.*/
+  regexForPassword: /.*/
 
 # login settings
 login:
@@ -20,6 +26,7 @@ login:
 # default language file (one of the base file names from those in plugins/AuthTools/locale)
 defaultLang: eng
 
-# AuthTools extends the data providers used by SimpleAuth. Generic properties are inherited from SimpleAuth, but AuthTools-specific properties are configured here.
+# AuthTools extends the data providers used by SimpleAuth.
 dataProvider:
-
+  # Please put "none" for the SimpleAuth dataProvider option, and put one of (yaml, sqlite3, mysql) here.
+  type: yaml
